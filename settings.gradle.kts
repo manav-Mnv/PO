@@ -21,4 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "PO"
 include(":app")
+include(":domain")
+include(":data")
+include(":core")
+include(":presentation")
+include(":ai")
+include(":personalization")
  
