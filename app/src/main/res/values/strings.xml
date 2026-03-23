@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PO</string>
+    <string name="chat_empty_state_greeting">Hi, I\'m PO. Tell me how you\'re feeling.</string>
+    <string name="chat_type_message_hint">Type a message...</string>
+    <string name="chat_send_button_desc">Send</string>
 </resources>

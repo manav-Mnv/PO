@@ -1,8 +1,8 @@
 package com.example.po.domain.model
 
-data class ChatMessage(
+data class Confession(
     val id: String,
     val text: String,
-    val sender: Sender,
+    val emotionTag: Emotion,
     val timestamp: Long
 )

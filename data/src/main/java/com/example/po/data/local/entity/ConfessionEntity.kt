@@ -4,9 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.po.domain.model.Emotion
 
-@Entity(tableName = "mood_entry")
-data class MoodEntryEntity(
+@Entity(tableName = "confession")
+data class ConfessionEntity(
     @PrimaryKey val id: String,
-    val emotion: Emotion,
+    val text: String,
+    val emotionTag: Emotion,
     val timestamp: Long
 )
