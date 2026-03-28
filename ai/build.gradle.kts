@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -25,4 +27,16 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":core"))
     implementation(libs.androidx.core.ktx)
+
+    // TensorFlow Lite
+    implementation("org.tensorflow:tensorflow-lite:2.14.0")
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Tests
+    testImplementation(libs.junit)
+    testImplementation("io.mockk:mockk:1.13.10")
 }

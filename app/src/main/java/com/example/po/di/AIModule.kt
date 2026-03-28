@@ -16,4 +16,10 @@ object AIModule {
     fun provideResponseEngine(): ResponseEngine {
         return DefaultResponseEngineFactory.create()
     }
+
+    @Provides
+    @Singleton
+    fun provideEmotionDetector(
+        @dagger.hilt.android.qualifiers.ApplicationContext context: android.content.Context,
+    ): com.example.po.ai.engine.EmotionDetector = com.example.po.ai.engine.ResilientEmotionDetector(context)
 }

@@ -1,17 +1,13 @@
 package com.example.po.ai.engine
 
 import com.example.po.domain.model.Emotion
-import javax.inject.Inject
 
-class EmotionDetector @Inject constructor() {
-    fun detect(text: String): Emotion {
-        val lowerText = text.lowercase()
-        return when {
-            listOf("sad", "cry", "alone", "tired").any { lowerText.contains(it) } -> Emotion.SAD
-            listOf("angry", "hate", "frustrated").any { lowerText.contains(it) } -> Emotion.ANGRY
-            listOf("anxious", "scared", "nervous").any { lowerText.contains(it) } -> Emotion.ANXIOUS
-            listOf("happy", "great", "excited").any { lowerText.contains(it) } -> Emotion.HAPPY
-            else -> Emotion.NEUTRAL
-        }
-    }
+/**
+ * Contract for any emotion detection implementation.
+ *
+ * Both the legacy keyword detector and the new ML detector implement this.
+ * Hilt swaps the binding in AiModule — nothing else in the codebase changes.
+ */
+interface EmotionDetector {
+    fun detect(text: String): Emotion
 }

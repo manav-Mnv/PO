@@ -20,6 +20,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    androidResources {
+        noCompress += "tflite"
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
